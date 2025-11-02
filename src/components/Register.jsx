@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Register.css';
 
-const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/';
+const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/api';
 
 function Register({ onSwitchToLogin, onRegister }) {
   const [formData, setFormData] = useState({

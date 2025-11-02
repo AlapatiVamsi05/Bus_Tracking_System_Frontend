@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './LiveTracker.css';
 
-const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/';
+const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/api';
 
 function LiveTracker({ onNavigate }) {
   const [buses, setBuses] = useState([]);
