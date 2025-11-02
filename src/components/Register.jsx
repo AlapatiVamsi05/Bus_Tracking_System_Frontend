@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Register.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/';
 
 function Register({ onSwitchToLogin, onRegister }) {
   const [formData, setFormData] = useState({
@@ -62,7 +62,7 @@ function Register({ onSwitchToLogin, onRegister }) {
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <h2>Student Registration</h2>
-          
+
           {error && <div className="error-message">{error}</div>}
 
           <div className="form-group">
@@ -147,7 +147,7 @@ function Register({ onSwitchToLogin, onRegister }) {
           </button>
 
           <div className="auth-footer">
-            <p>Already have an account? 
+            <p>Already have an account?
               <button type="button" className="link-btn" onClick={onSwitchToLogin}>
                 Login here
               </button>

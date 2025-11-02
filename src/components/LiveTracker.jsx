@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './LiveTracker.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/';
 
 function LiveTracker({ onNavigate }) {
   const [buses, setBuses] = useState([]);
@@ -161,7 +161,7 @@ function LiveTracker({ onNavigate }) {
           <div className="buses-list">
             <h3>Available Buses</h3>
             {error && <div className="error-message">{error}</div>}
-            
+
             {buses.length === 0 ? (
               <div className="no-buses">No buses available</div>
             ) : (
@@ -174,7 +174,7 @@ function LiveTracker({ onNavigate }) {
                   >
                     <div className="bus-card-header">
                       <div className="bus-number-badge">{bus.busNumber}</div>
-                      <div 
+                      <div
                         className="bus-status"
                         style={{ backgroundColor: getStatusColor(bus.currentSpeed) }}
                       >
@@ -219,7 +219,7 @@ function LiveTracker({ onNavigate }) {
             <>
               <div className="tracking-details">
                 <h2>🎯 Tracking: {trackingData.bus.busNumber}</h2>
-                
+
                 <div className="detail-cards">
                   <div className="detail-card primary">
                     <div className="card-icon">🚌</div>

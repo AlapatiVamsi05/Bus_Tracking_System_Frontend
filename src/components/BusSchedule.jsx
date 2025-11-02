@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './BusSchedule.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://bus-tracking-system-backend-ten.vercel.app/';
 
 function BusSchedule({ onNavigate }) {
   const [buses, setBuses] = useState([]);
@@ -80,7 +80,7 @@ function BusSchedule({ onNavigate }) {
       <div className="schedule-container">
         <aside className="filters-sidebar">
           <h2>Filters</h2>
-          
+
           <div className="filter-group">
             <h3>Routes</h3>
             <div className="filter-options">
@@ -97,7 +97,7 @@ function BusSchedule({ onNavigate }) {
                 </label>
               ))}
               {selectedRoute && (
-                <button 
+                <button
                   className="clear-filter"
                   onClick={() => setSelectedRoute('')}
                 >
@@ -123,7 +123,7 @@ function BusSchedule({ onNavigate }) {
                 </label>
               ))}
               {selectedArea && (
-                <button 
+                <button
                   className="clear-filter"
                   onClick={() => setSelectedArea('')}
                 >
@@ -149,7 +149,7 @@ function BusSchedule({ onNavigate }) {
                 </label>
               ))}
               {selectedDay && (
-                <button 
+                <button
                   className="clear-filter"
                   onClick={() => setSelectedDay('')}
                 >
@@ -163,7 +163,7 @@ function BusSchedule({ onNavigate }) {
         <div className="schedule-content">
           <h2>Bus Schedule</h2>
           {error && <div className="error-message">{error}</div>}
-          
+
           {filteredBuses.length === 0 ? (
             <div className="no-buses">No buses found matching your filters</div>
           ) : (
@@ -186,7 +186,7 @@ function BusSchedule({ onNavigate }) {
                       <td>{bus.area}</td>
                       <td>{`0${8 + (index % 3)}:${index % 2 === 0 ? '00' : '30'} AM`}</td>
                       <td>
-                        <button 
+                        <button
                           className="details-btn"
                           onClick={() => handleViewDetails(bus.busNumber)}
                         >
